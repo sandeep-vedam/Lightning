@@ -1,17 +1,23 @@
 {
   "author": "Metrological, Bas van Meurs <b.van.meurs@metrological.com>",
   "name": "@lightningjs/core",
-  "version": "2.14.1",
+  "version": "2.14.0",
   "license": "Apache-2.0",
   "type": "module",
   "types": "dist/src/index.d.ts",
   "module": "dist/src/index.js",
   "main": "dist/lightning.js",
+
   "exports": {
     ".": {
-      "types": "./dist/src/index.d.ts",
-      "import": "./dist/src/index.js",
-      "require": "./dist/lightning.js"
+      "import": {
+        "default": "./dist/src/index.js",
+        "types": "./dist/src/index.d.ts"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/lightning.js"
+      }
     },
     "./inspector": {
       "types": "./devtools/lightning-inspect.d.ts",
